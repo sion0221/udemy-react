@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Button from "./Button";
-import Input from "./Input";
+import Button from "./Button.jsx";
+import Input from "./Input.jsx";
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -28,22 +28,20 @@ export default function AuthInputs() {
       id="auth-inputs"
       className="w-full max-w-sm p-8 mx-auto rounded shadow-md bg-gradient-to-b from-stone-700 to-stone-800"
     >
-      <div clasName="flex flex-col gap-2 mb-6">
+      <div className="flex flex-col gap-2 mb-6">
         <Input
           label="Email"
           invalid={emailNotValid}
           type="email"
           // style={{
-          //   backgroundColor: emailNotValid ? "#fed2d2" : "#d1d5db",
+          //   backgroundColor: emailNotValid ? '#fed2d2' : '#d1d5db'
           // }}
-          className={emailNotValid ? "invalid" : undefined}
           onChange={(event) => handleInputChange("email", event.target.value)}
         />
         <Input
           invalid={passwordNotValid}
-          label="password"
+          label="Password"
           type="password"
-          className={passwordNotValid ? "invalid" : undefined}
           onChange={(event) =>
             handleInputChange("password", event.target.value)
           }
