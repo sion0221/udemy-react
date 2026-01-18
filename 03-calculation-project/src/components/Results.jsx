@@ -1,8 +1,7 @@
 import { calculateInvestmentResults, formatter } from "../util/investment.js";
 
 export default function Results({ input }) {
-  const results = [];
-  calculateInvestmentResults(input, results);
+  const results = calculateInvestmentResults(input);
 
   if (results.length === 0) {
     return <p className="center">잘못된 입력값을 작성하였습니다</p>;
