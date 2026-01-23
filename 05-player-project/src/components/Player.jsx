@@ -7,6 +7,7 @@ export default function Player() {
 
   function handleClick() {
     setEneterPlayerName(playerName.current.value);
+    playerName.current.value = "";
   }
 
   return (
