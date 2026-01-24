@@ -12,7 +12,7 @@ export default function Player() {
 
   return (
     <section id="player">
-      <h2>Welcome {enterPlayerName ?? "unknown entity"}</h2>
+      <h2>환영합니다! {enterPlayerName ?? "익명"} 사용자님</h2>
       <p>
         <input ref={playerName} type="text" />
         <button onClick={handleClick}>Set Name</button>
