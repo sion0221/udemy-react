@@ -1,6 +1,18 @@
+import { useImperativeHandle, useRef } from "react";
+
 export default function ResultModal({ ref, result, targetTime, username }) {
+  const dialog = useRef();
+
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialog.current.showModal();
+      },
+    };
+  });
+
   return (
-    <dialog ref={ref} className="result-modal">
+    <dialog ref={dialog} className="result-modal">
       <h2>챌린지 {result}</h2>
       <p>
         목표 시간은, <strong>{targetTime} seconds.</strong>
