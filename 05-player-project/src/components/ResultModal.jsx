@@ -1,6 +1,6 @@
-export default function ResultModal({ result, targetTime, username }) {
+export default function ResultModal({ ref, result, targetTime, username }) {
   return (
-    <dialog className="result-modal">
+    <dialog ref={ref} className="result-modal">
       <h2>챌린지 {result}</h2>
       <p>
         목표 시간은, <strong>{targetTime} seconds.</strong>
