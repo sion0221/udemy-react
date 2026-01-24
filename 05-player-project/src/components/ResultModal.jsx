@@ -1,0 +1,17 @@
+export default function ResultModal({ result, targetTime, username }) {
+  return (
+    <dialog className="result-modal">
+      <h2>챌린지 {result}</h2>
+      <p>
+        목표 시간은, <strong>{targetTime} seconds.</strong>
+      </p>
+      <p>
+        {username}님은,
+        <strong> X seconds를 남기고 타이머를 멈췄습니다.</strong>
+      </p>
+      <form method="dialog">
+        <button>닫기</button>
+      </form>
+    </dialog>
+  );
+}
