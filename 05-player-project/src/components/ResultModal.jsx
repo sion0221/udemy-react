@@ -11,6 +11,7 @@ export default function ResultModal({
 
   const userLost = remainingTime <= 0 || remainingTime === targetTime * 1000;
   const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
+  const score = Math.round((1 - remainingTime / (targetTime * 1000)) * 100);
 
   useImperativeHandle(ref, () => {
     return {
@@ -21,8 +22,13 @@ export default function ResultModal({
   });
 
   return (
-    <dialog ref={dialog} className="result-modal">
+    <dialog ref={dialog} className="result-modal" onClose={onReset}>
       {userLost && <h2>챌린지 실패</h2>}
+      {!userLost && (
+        <h2>
+          {username}님의 점수 : {score}
+        </h2>
+      )}
       <p>
         목표 시간은,{" "}
         <strong>
