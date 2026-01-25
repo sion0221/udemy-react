@@ -1,4 +1,5 @@
 import { useImperativeHandle, useRef } from "react";
+import { createPortal } from "react-dom";
 
 export default function ResultModal({
   ref,
@@ -21,7 +22,7 @@ export default function ResultModal({
     };
   });
 
-  return (
+  return createPortal(
     <dialog ref={dialog} className="result-modal" onClose={onReset}>
       {userLost && <h2>챌린지 실패</h2>}
       {!userLost && (
@@ -45,6 +46,7 @@ export default function ResultModal({
       <form method="dialog" onSubmit={onReset}>
         <button>닫기</button>
       </form>
-    </dialog>
+    </dialog>,
+    document.getElementById("modal"),
   );
 }
